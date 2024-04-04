@@ -9,18 +9,18 @@ Nan Bai, Ricardo da Silva Torres, Anna Fensel, Tamara Metze, and Art Dewulf. 202
 This project provides a workflow to construct multimodal dataset about climate change stances from Twitter.
 The workflow is illustrated as follows:
 
-![Workflow of Data](Diagrams/Framework_1.png)
+![Workflow of Data](diagrams/Framework_1.png)
 
-The datasets used in the paper is saved under ```./Data``` folder.
+The datasets used in the paper is saved under ```./data``` folder.
 
 For data security and privacy issues, we only share the processed, anonymized, and translated English tweets as the raw textual data and the image IDs as the visual data.
 Further in-detail data can be provided upon request.
 
-```./Data/tweets_subset.csv``` is the main dataset used for training and evaluation, which is a non-redundant, unambiguous, and easy subset of the originally collected Dutch language full dataset.
+```./data/tweets_subset.csv``` is the main dataset used for training and evaluation, which is a non-redundant, unambiguous, and easy subset of the originally collected Dutch language full dataset.
 
 A snapshot of a few examples in the datasets:
 
-![Examples in Dataset](Diagrams/Examples.png)
+![Examples in Dataset](diagrams/Examples.png)
 
 
 ## Code
@@ -39,4 +39,4 @@ Five CLIP-based embedding model variants are used in this paper, all implemented
 The computed textual and visual embeddings by each type of base models of the input datasets can also be provided upon request.
 
 ### MLP Checkpoints
-For each model variant, several 3-layer MLP models are trained on top as stance classifier and new embedding model.
+For each model variant, several 3-layer MLP models are trained on top of the multimodal embeddings computed by CLIP models, as stance classifier and new embedding model.
