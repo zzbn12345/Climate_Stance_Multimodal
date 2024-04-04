@@ -5,13 +5,22 @@ This is the code for the Paper '*Inferring Climate Change Stances from Multimoda
 
 Nan Bai, Ricardo da Silva Torres, Anna Fensel, Tamara Metze, and Art Dewulf. 2024. Inferring Climate Change Stances from Multimodal Tweets. In Proceedings of ACM SIGIR ’24. ACM, New York, NY, USA, 5 pages.
 
-## Data
+## Workflow and Dataset
+This project provides a workflow to construct multimodal dataset about climate change stances from Twitter.
+The workflow is illustrated as follows:
+
+![Workflow of Data](Diagrams/Framework_1.png)
+
 The datasets used in the paper is saved under ```./Data``` folder.
 
 For data security and privacy issues, we only share the processed, anonymized, and translated English tweets as the raw textual data and the image IDs as the visual data.
 Further in-detail data can be provided upon request.
 
 ```./Data/tweets_subset.csv``` is the main dataset used for training and evaluation, which is a non-redundant, unambiguous, and easy subset of the originally collected Dutch language full dataset.
+
+A snapshot of a few examples in the datasets:
+
+![Examples in Dataset](Diagrams/Examples.png)
 
 
 ## Code
