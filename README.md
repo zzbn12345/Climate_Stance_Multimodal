@@ -9,7 +9,7 @@ Nan Bai, Ricardo da Silva Torres, Anna Fensel, Tamara Metze, and Art Dewulf. 202
 This project provides a workflow to construct multimodal dataset about climate change stances from Twitter.
 The workflow is illustrated as follows:
 
-![Workflow of Data](diagrams/Framework_1.png)
+![Workflow of Data](Diagrams/Framework_1.png)
 
 The datasets used in the paper is saved under ```./data``` folder.
 
@@ -20,7 +20,7 @@ Further in-detail data can be provided upon request.
 
 A snapshot of a few examples in the datasets:
 
-![Examples in Dataset](diagrams/Examples.png)
+![Examples in Dataset](Diagrams/Examples.png)
 
 
 ## Code
