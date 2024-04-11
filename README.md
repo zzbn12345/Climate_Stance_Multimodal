@@ -56,7 +56,8 @@ Five CLIP-based embedding model variants are used in this paper, all implemented
 | clip-ViT-B-32-multilingual-v1 | ML-EN | CLIP_ML_EN | 512 |
 | clip-ViT-B-32-multilingual-v1 | ML-NL | CLIP_ML_NL | 512 |
 
-The computed textual and visual embeddings by each type of base models of the input datasets can also be provided upon request.
+The computed textual and visual embeddings by each type of base models of the input datasets can also be accessed with the [following link](https://drive.google.com/file/d/1m-Qovimp_NA0Neondk2uCRzIrpVqcE4f/view?usp=drive_link).
+Please download and unzip the file ```embeddings.zip``` under the ```./data/``` folder.
 
 ### MLP Checkpoints
 For each model variant, several 3-layer MLP models are trained on top of the multimodal embeddings computed by CLIP models, as stance classifier and new embedding model.
