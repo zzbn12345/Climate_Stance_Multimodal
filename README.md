@@ -3,7 +3,7 @@ This is the code for the Paper '*Inferring Climate Change Stances from Multimoda
 
 ## Cite as
 
-Nan Bai, Ricardo da Silva Torres, Anna Fensel, Tamara Metze, and Art Dewulf. 2024. Inferring Climate Change Stances from Multimodal Tweets. In Proceedings of ACM SIGIR ’24. ACM, New York, NY, USA, 5 pages.
+Nan Bai, Ricardo da Silva Torres, Anna Fensel, Tamara Metze, and Art Dewulf. 2024. Inferring Climate Change Stances from Multimodal Tweets. In *Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR ’24), July 14–18, 2024, Washington, DC, USA*. ACM, New York, NY, USA, 5 pages. [https://doi.org/10.1145/3626772.3657950](https://doi.org/10.1145/3626772.3657950)
 
 ## Workflow and Dataset
 This project provides a workflow to construct multimodal dataset about climate change stances from Twitter.
