@@ -1,5 +1,3 @@
 
-model_storage/CLIP32/embeddings.pkl
-model_storage/CLIP16/embeddings.pkl
 data/CLIP16/embeddings.pkl
 data/CLIP32/embeddings.pkl
