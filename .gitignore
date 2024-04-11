@@ -1,3 +1,2 @@
 
-data/CLIP16/embeddings.pkl
-data/CLIP32/embeddings.pkl
+embeddings.pkl
