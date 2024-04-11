@@ -30,7 +30,7 @@ Five CLIP-based embedding model variants are used in this paper, all implemented
 
 | Model Variant | Name in Paper | Name in Repo | Embedding Size |
 | ------------- | ------------- | ------------- | ------------- |
-| clip-ViT-B-32 | B-32 | CLIP | 512 |
+| clip-ViT-B-32 | B-32 | CLIP32 | 512 |
 | clip-ViT-B-16 | B-16 | CLIP16 | 512 |
 | clip-ViT-L-14 | L-14 | CLIP14 | 768 |
 | clip-ViT-B-32-multilingual-v1 | ML-EN | CLIP_ML_EN | 512 |
