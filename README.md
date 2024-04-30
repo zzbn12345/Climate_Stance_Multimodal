@@ -1,11 +1,11 @@
 # Climate_Stance_Multimodal
 This is the code for the Paper '*Inferring Climate Change Stances from Multimodal Tweets*' accepted by the Short Paper track of [SIGIR 2024](https://sigir-2024.github.io/index.html).
 
+[![DOI](https://zenodo.org/badge/781884553.svg)](https://zenodo.org/doi/10.5281/zenodo.11093442)
+
 ## Cite as
 
 Nan Bai, Ricardo da Silva Torres, Anna Fensel, Tamara Metze, and Art Dewulf. 2024. Inferring Climate Change Stances from Multimodal Tweets. In *Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR ’24), July 14–18, 2024, Washington, DC, USA*. ACM, New York, NY, USA, 5 pages. [https://doi.org/10.1145/3626772.3657950](https://doi.org/10.1145/3626772.3657950)
-
-or
 
 ```
 @inproceedings{bai2024climate,
@@ -22,6 +22,19 @@ numpages = {5},
 keywords = {Multimodal Embeddings, Transfer Learning, User-Generated Content, Climate Change Claims, Sea-Level Rise, Public Policy},
 location = {, Washington, DC, USA, },
 series = {SIGIR '24}
+}
+```
+or
+```
+@software{nan_bai_2024_11093443,
+  author       = {Nan Bai},
+  title        = {zzbn12345/Climate\_Stance\_Multimodal: Zenodo Update},
+  month        = apr,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v1.0.1},
+  doi          = {10.5281/zenodo.11093443},
+  url          = {https://doi.org/10.5281/zenodo.11093443}
 }
 ```
 
