@@ -132,7 +132,11 @@ This dataset is for academic use only and follows the Fair-Use guideline.
 The privacy of the users is fully respected and we will follow an opt-out principle for examples upon request.
 
 ### Upcoming
-Similar analysis will be performed on the full Dutch-language dataset, as well as an English dataset collected.
+- Similar analysis will be performed on the full Dutch-language dataset that is not easy and unambiguous;
+- Similar analysis will be performed and compared on an English dataset collected;
+- A few other datasets on climate change stances will also be evaluated using the trained models as well as their ensemble.
+
+The updates will be linked in this repository.
 
 ### Licence
 The workflows and datasets of this paper can be used under the Creative Common License (Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). 
