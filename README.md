@@ -122,8 +122,10 @@ Macro-average F1
 ### Pseudo-Labelling
 The labelling process of this dataset relies on a previous step of this research.
 A retweeting sequence within the top-1000 users is formalized as a social network.
-With a community detection algorithm based on Clauset-Newman-Moore greedy modularity maximization, two prominent communities emerged, representing the user-level skeptical and mainstream stances.
+With a community detection algorithm based on Clauset-Newman-Moore greedy modularity maximization, two prominent communities emerged, representing the user-level skeptical and mainstream stances, as shown below.
 Both communities are checked and justified by domain experts.
+![Social Network](Diagrams/Network.png)
+
 Full details of this step will be posted on a seperate repository.
 
 ### Credit
