@@ -96,3 +96,44 @@ Additionally, ```.model_storage/[model]/[option]/hyperdict.p``` stores the train
 
 ### Inference and Evaluation
 For each type of base models, evaluation of trained MLP checkpoints is performed in the Jupyter notebook ```[model]-Evalution.ipynb```, generating results of macro-average F1 scores to be saved as ```.results/[model]/results_F1.pkl```.
+
+The overall results with all base models are merged in ```Results-F1.ipynb```, where both accuracy and macro-average F1 scores are calculated and visualized, all accompanied with statistical tests showing the significance levels.
+
+## Results
+### Classifier-based Result
+Accuracy:
+![Classification Accuracy](Diagrams/Performance_2_Acc.png)
+
+Macro-average F1:
+![Classification F1](Diagrams/Performance_2_F1.png)
+
+### Embedding-based Classification Result
+By computing cosine similarity of new embeddings of examples with that of the golden labels, an embedding-based classification resembling zero-shot classification can be obtained.
+
+Accuracy:
+![Embedding Accuracy](Diagrams/Embeddings_2_Acc.png)
+
+Macro-average F1
+![Embedding F1](Diagrams/Embeddings_2_F1.png)
+
+
+## Acknowledgement and Licence
+
+### Pseudo-Labelling
+The labelling process of this dataset relies on a previous step of this research.
+A retweeting sequence within the top-1000 users is formalized as a social network.
+With a community detection algorithm based on Clauset-Newman-Moore greedy modularity maximization, two prominent communities emerged, representing the user-level skeptical and mainstream stances.
+Both communities are checked and justified by domain experts.
+Full details of this step will be posted on a seperate repository.
+
+### Credit
+The copyright of all the downloaded and processed images and texts belongs to the original twitter users and content creators. 
+This dataset is for academic use only and follows the Fair-Use guideline.
+The privacy of the users is fully respected and we will follow an opt-out principle for examples upon request.
+
+### Upcoming
+Similar analysis will be performed on the full Dutch-language dataset, as well as an English dataset collected.
+
+### Licence
+The workflows and datasets of this paper can be used under the Creative Common License (Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). 
+Please give appropriate credit, such as providing a link to our paper or to [this github repository](https://github.com/zzbn12345/Climate_Stance_Multimodal).
