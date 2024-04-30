@@ -36,12 +36,29 @@ The datasets used in the paper is saved under ```./data``` folder.
 For data security and privacy issues, we only share the processed, anonymized, and translated English tweets as the raw textual data and the image IDs as the visual data.
 Further in-detail data can be provided upon request.
 
-```./data/tweets_subset.csv``` is the main dataset used for training and evaluation, which is a non-redundant, unambiguous, and easy subset of the originally collected Dutch language full dataset.
+### Data
+
+```./data/tweets_subset.csv``` is the main dataset used for training and evaluation, which is a non-redundant, unambiguous, and easy subset of the originally collected full dataset.
+Here we show a few examples of our collected dataset:
+| | id | skepticism | mainstream | label | text_NL | text_EN | split | available | target | unseen_images |
+| ------ | ------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |
+| 2 | 909170801 | FALSE | TRUE | 1 | Nederland moet vaart maken met beveiliging tegen zeespiegelstijging HTTPURL | The Netherlands must speed up protection against sea level rise HTTPURL | val | FALSE | | -1 |
+| 21584 | 1222041615092630000 | TRUE | FALSE | 2 | De dijken zijn berekend op een #zeespiegelstijging van 6 meter In het huidige tempo duurt dat nog zo'n 40.000 jaar ! ! #klimaathysterie HTTPURL HTTPURL | The dikes are designed for a sea level rise of 6 meters . At the current rate , that will take about 40,000 years ! ! #climatehysteria HTTPURL HTTPURL | test | TRUE | 3_1222041608851509249 | 0 |
+
+```id``` is the original Tweet ID; ```skepticism``` marks if the example involves a user in the retweet chain typically clustered as someone who are sceptical about the existence or anthropogenic nature of climate change; ```mainstream``` marks if the example involves a user in the retweet chain typically clustered as someone who support the mainstream view on anthropogenic climate change issues; ```label``` marks the stance label for this multimodal example, where 1 means supporting stance and 2 means skeptical stance; ```text_NL``` and ```text_EN``` are respectively the normalized and pseudomynized textual data; ```split``` marks the dataset split (train/val/test) of the example; ```available``` marks if there is a visual element available in this example; ```target``` notes the visual ID of the visual element, if available; and ```unseen_images``` marks if the visual element has been present in the training set, where 1 means the image only appears in validation or test set, 0 means that the image has been present in the training set, and -1 means that no visual is attached.
 
 A snapshot of a few examples in the datasets:
 
-![Examples in Dataset](Diagrams/Examples_v3.png)
+![Examples in Dataset](Diagrams/Examples_v5.png)
 
+### Golden Examples
+For each stance, a set of golden examples clearly related is prepared for the additional training epoch. At the current stage, one sentence per stance is used:
+
+Mainstream stance:
+```"Climate change is a very serious issue to pay attention to! We should care about climate change!```
+
+Skeptical stance:
+```Climate change is not even a real problem to concern about! I do not believe in it!```
 
 ## Code
 
@@ -58,6 +75,24 @@ Five CLIP-based embedding model variants are used in this paper, all implemented
 
 The computed textual and visual embeddings by each type of base models of the input datasets can also be accessed with the [following link](https://drive.google.com/file/d/1m-Qovimp_NA0Neondk2uCRzIrpVqcE4f/view?usp=drive_link).
 Please download and unzip the file ```embeddings.zip``` under the ```./data/``` folder.
+For each type of base models, the embeddings are therefore stored in ```./data/[model]/embeddings.pkl```, which contains the visual (```'img_emb'```) and textual embeddings (```'txt_emb'```) of all examples in the dataset, the textual embeddings of the golden examples (```'lab_emb'```), as well as the visual embeddings computed from a blank white image for empty visuals (```'empty_img_emb'```).
 
 ### MLP Checkpoints
 For each model variant, several 3-layer MLP models are trained on top of the multimodal embeddings computed by CLIP models, as stance classifier and new embedding model.
+
+Under each base model, two sets of checkpoints are saved under ```.model_storage/[model]/001/``` and ```.model_storage/[model]/002/```, storing the model trained with (```002```, or ```w enh.``` in paper) and without (```001```, or ```w/o enh.``` in paper) the golden label enhancing step.
+
+Under each option, five variants of modality fusion strategy are experimented, resulting a MLP checkpoint ```.model_storage/[model]/[option]/[fusion_type]_MLP_classifier.pth```.
+The fusion types are respectively shown as follows, where ```d``` means the original embeddings size.
+| Fusion Type | Name in Paper | Name in Repo | Embedding Size |
+| ------------- | ------------- | ------------- | ------------- |
+| Only keeping visual embeddings | visual-only | image_average | d |
+| Only keeping textual embeddings | textual-only | text_average | d |
+| Averaging visual and textual embeddings | multimodal average | multi_average | d |
+| Concatenating visual and textual embeddings | multimodal concat | multi_concat | 2d |
+| Merging visual and textual embeddings with concatenation, addition, subtraction, and element-wise multiplication | multimodal complex | multi_complex | 5d |
+
+Additionally, ```.model_storage/[model]/[option]/hyperdict.p``` stores the training curves of all five variants of modality fusion with the accuracy changes on validation set along the epochs.
+
+### Inference and Evaluation
+For each type of base models, evaluation of trained MLP checkpoints is performed in the Jupyter notebook ```[model]-Evalution.ipynb```, generating results of macro-average F1 scores to be saved as ````.results/[model]/results_F1.pkl```.
