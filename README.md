@@ -95,4 +95,4 @@ The fusion types are respectively shown as follows, where ```d``` means the orig
 Additionally, ```.model_storage/[model]/[option]/hyperdict.p``` stores the training curves of all five variants of modality fusion with the accuracy changes on validation set along the epochs.
 
 ### Inference and Evaluation
-For each type of base models, evaluation of trained MLP checkpoints is performed in the Jupyter notebook ```[model]-Evalution.ipynb```, generating results of macro-average F1 scores to be saved as ````.results/[model]/results_F1.pkl```.
+For each type of base models, evaluation of trained MLP checkpoints is performed in the Jupyter notebook ```[model]-Evalution.ipynb```, generating results of macro-average F1 scores to be saved as ```.results/[model]/results_F1.pkl```.
